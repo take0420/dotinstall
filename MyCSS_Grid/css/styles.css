@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+/* ２列３行 */
+  /* grid-template-columns: 100px 100px;
+  grid-template-rows: 100px 100px 100px; */
+  
+/* ３列２行 */
+  /* grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px; */
+
+/* 4個並べる */
+  /* grid-template-columns: repeat(4, 100px);
+  grid-template-rows: 100px 100px; */
+
+/* 画面に収まるまで入れる */
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-rows: 100px 100px;
+
+/* 余白 */
+  gap: 20px 40px;
+
+/* 可変 */
+  /* grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px 100px;
+} */
+
+/* ２対１の割合で可変 */
+  /* grid-template-columns: 100px 2fr 1fr;
+  grid-template-rows: 100px 100px;
+} */
+
+}
+
+
+.box1 {
+  background: hsl(0, 60%, 60%);
+}
+
+.box2 {
+  background: hsl(60, 60%, 60%);
+}
+
+.box3 {
+  background: hsl(120, 60%, 60%);
+}
+
+.box4 {
+  background: hsl(180, 60%, 60%);
+}
+
+.box5 {
+  background: hsl(240, 60%, 60%);
+}
+
+.box6 {
+  background: hsl(300, 60%, 60%);
+}
+
+
