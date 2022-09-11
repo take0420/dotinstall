@@ -1,0 +1,33 @@
+/* common */
+
+/* 謎のスペースが生まれないように */
+body {
+  margin: 0;
+}
+
+/* 画像を背景色と合わせる（はみ出さないようにする）設定 */
+img {
+  vertical-align: bottom;
+}
+
+/* 画像との幅をなくす */
+h1,
+p {
+  margin: 0;
+}
+
+/* header */
+
+header {
+  background:  #efefef;
+}
+
+header .container {
+  width: 400px;
+  margin: 0 auto;
+  outline: 2px solid red;
+}
+
+/* main */
+
+/* footer */
