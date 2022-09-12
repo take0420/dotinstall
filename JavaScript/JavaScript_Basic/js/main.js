@@ -1,10 +1,13 @@
 'use strict';
 
-// console.log('Hello');
-// console.log("Hello");
+//定数 const
+//変数 let
+//古いのであまり使わない var
 
-// 「!」は「''」の時には認識されない。「””」にする必要あり。
-// console.log('it's me!');
-console.log("it's me!");
+let price = 150;
+console.log(price * 140);
+console.log(price * 160);
 
-// console.log('Hello world from main.js!');
+price = 200;
+console.log(price * 140);
+console.log(price * 160);
