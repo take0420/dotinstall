@@ -1,16 +1,23 @@
 'use stirct';
 
-// キャラクターのHPが100あるうちは15ずつダメージを与える。
-// let hp = 100;
-// HPの残数
-// while (hp > 0) {
-  // console.log(`${hp} HP left!`);
-  // hp -= 15;  //hpを-15ずつ減らしていく
-// }
+// ページの途中で広告(Ad)を挿入したい。
+// Adを1つ直すと全て直す必要があることに...
+// function showAd() {---}で定義すると、定義したものだけを直せば、他の処理も同時に変更されて便利。
 
-let hp = -50;
-// HPの残数が-50であるが、一度は表示させたいケース。
-do {
-  console.log(`${hp} HP left!`);
-  hp -= 15;
-} while (hp > 0);
+function showAd() {
+  console.log('----------')
+  console.log('----Ad----')
+  console.log('----------')
+}
+
+showAd();
+console.log('Tom is great!')
+console.log('Tom is great!')
+
+showAd();
+console.log('Tom is great!')
+console.log('Tom is great!')
+
+showAd();
+console.log('Tom is great!')
+console.log('Tom is great!')
