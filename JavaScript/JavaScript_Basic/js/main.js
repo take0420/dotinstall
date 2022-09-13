@@ -1,14 +1,16 @@
 'use stirct';
 
-// Hello と10回表示したい。
-// i は1ずつ値を増やしていくから let が用いられる。
-for (let i = 1; i <= 10; i++) {
-  // 「Hello10」と表示される。
-  // console.log('hello');
+// キャラクターのHPが100あるうちは15ずつダメージを与える。
+// let hp = 100;
+// HPの残数
+// while (hp > 0) {
+  // console.log(`${hp} HP left!`);
+  // hp -= 15;  //hpを-15ずつ減らしていく
+// }
 
-  // Hello に番号が割り当てられて10回表示される。
-  // console.log('Hello' + i);
-  
-  // Hello に番号が割り当てられて10回表示される。
-  console.log(`Hello ${i}`);
-}
+let hp = -50;
+// HPの残数が-50であるが、一度は表示させたいケース。
+do {
+  console.log(`${hp} HP left!`);
+  hp -= 15;
+} while (hp > 0);
