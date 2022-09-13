@@ -1,11 +1,16 @@
 'use strict';
 
-//変数 let
+const price = 1200;
 
-let price = 500;
+console.log(price > 1000);// true
+console.log(price < 1000);// false
+console.log(price >= 1000);// true
+console.log(price <= 1000);// false
+console.log(price === 1000);// false
+console.log(price !== 1000);// true // ノットイコール
 
-price += 100; 
+// false ; 0, null, undefined, '',false
+// true ; それ以外
 
-price *= 100; 
-
-console.log(price)
+console.log(Boolean(0));// false
+console.log(Boolean('hello'));// true
