@@ -1,11 +1,10 @@
 'use strict';
 
-const x = 2;
+{
+  const score1 = 80;
+  const score2 = 90;
+  const score3 = 40;
 
-function f() {  // f = 1 理由；{}内で x = 1 と定義しているから。
-  const x = 1;
-  console.log(x);
-}
-
-f(); // f = 2 理由；const x = 2 と定義しているから。
-console.log(x);   
+  const scores = [80, 90, 40];
+  console.log(scores);
+} 
