@@ -1,15 +1,25 @@
 'use strict';
 
-{
-//新たに値を定義して配列に組み込む方法
-  const otherScores = [10, 20];
-  const scores = [80, 90, 40, 70, ...otherScores];
-  console.log(scores);
+{ 
+  const scores = [80, 90, 40, 70];    
 
-//a , b のsum関数を定義 => どこの文字列に対して？
-  function sum(a, b) {
-    console.log(a + b);
-  }
-// 「...otherScores」に対して
-  sum(...otherScores); // 10 + 20 = 30
+  // const [a, b, c, d] = scores;
+  // console.log(a);    
+  // console.log(b);   
+  // console.log(c);   
+  // console.log(d);    
+
+//配列にある先頭と２番目の要素を定数に入れ、残りは配列のまま表示
+  // const [a, b, ...others] = scores;
+  // console.log(a);    
+  // console.log(b);    
+  // console.log(others);
+
+//値の交換
+  let x = 30;
+  let y = 70;
+  [x, y] = [y, x];
+  console.log(x);
+  console.log(y);
+
 }
