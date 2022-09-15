@@ -1,12 +1,15 @@
 'use strict';
 
 {
-  // 90点は間違いで40点と50点の2回分のスコアだと分かった
-  const scores = [80, 90, 40, 70];
-  scores.splice(1, 1, 40, 50);
+//新たに値を定義して配列に組み込む方法
+  const otherScores = [10, 20];
+  const scores = [80, 90, 40, 70, ...otherScores];
+  console.log(scores);
 
-for (let i = 0; i < scores.length; i++) {
-  console.log(`Score: ${i} ${scores[i]}` );
-}
-
+//a , b のsum関数を定義 => どこの文字列に対して？
+  function sum(a, b) {
+    console.log(a + b);
+  }
+// 「...otherScores」に対して
+  sum(...otherScores); // 10 + 20 = 30
 }
