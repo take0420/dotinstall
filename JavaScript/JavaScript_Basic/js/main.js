@@ -1,15 +1,21 @@
 'use strict';
 
 { 
-  const prices = [180, 190, 200];
-  
-// prices を 20円ずつ値上げ
-  // const updatePrices = prices.map((price) => {
-  //   return price + 20;
-  // });
+  const numbers = [1, 4, 7, 8, 10];
 
-//省略Ver.
-  const updatePrices = prices.map(price => price + 20);
-  console.log(updatePrices);
+// //偶数を抽出
+//   const evenNumbers = numbers.filter(number => {
+//     if (number % 2 === 0) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   });
+
+//省略Ver
+  const evenNumbers = numbers.filter(number => number % 2 === 0); 
+  
+  console.log(evenNumbers);
+
 }
 
