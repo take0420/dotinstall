@@ -1,15 +1,15 @@
 'use strict';
-
 {
-  //文字数
-  const str = 'hello';
+  const d = [2019, 11, 14];
 
-  // console.log(str.length); // 5
+  console.log(d.join('/')); // 2019/11/14
+  console.log(d.join(''));// 20191114
 
-  //部分文字列 = 例)'hello'の 'ell'のみ取り出したい
-  // str.substring(開始位置, 終了位置);
-  // console.log(str.substring(1, 4));
-
-//部分文字列 = 例)'hello'の 'e'のみ取り出したい
-  console.log(str[1]);
+  const t = '17:08:24';
+  console.log(t.split(':'));// '17', '08', '24'
+  
+  const [hour, minute, second] = t.split(':');
+  console.log(hour); // 17
+  console.log(minute); // 08
+  console.log(second); // 24
 }
