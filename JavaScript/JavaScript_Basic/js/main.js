@@ -1,14 +1,17 @@
 'use strict';
 {
-  //お知らせに便利
-  // alert('hello');
+  let i = 0;
 
-  //ユーザーに確認を求める
-  const answer = confirm('削除しますか？');
-  if (answer) {
-    console.log('削除しました');
-  } else {
-    console.log('キャンセルしました');
+  function showTime() {
+    console.log(new Date());
+    // showTime が 3回実行された時、タイマーが停止
+    i++;
+    if (i > 2) {  
+      clearInterval(intervalId);
+    }
   }
+
+  // 1000ミリ秒 = 1秒
+  const intervalId = setInterval(showTime, 1000);
 
 }
