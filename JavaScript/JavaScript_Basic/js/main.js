@@ -1,24 +1,15 @@
 'use strict';
 
 {
-  // let x = 1;
-  // let y = x;
-  // x = 5;
-  // console.log(x); // 5 
-  // console.log(y); // 1
+  //文字数
+  const str = 'hello';
 
-  // let x = [1, 2];
-  // let y = x;
-  // x[0] = 5;
-  // console.log(x); // [5, 2] 
-  // console.log(y); // [1, 2] ではなく [5, 2] になってしまう。 
-  // 理由;複雑なデータによってシステムに負荷がかからないよう簡略化して制御しているから。
+  // console.log(str.length); // 5
 
-  // では配列やオブジェクトの値を丸ごとコピーしたい場合はどうすればよいのか？
-  let x = [1, 2];
-  let y = [...x];
-  x[0] = 5;
-  console.log(x); // [5, 2] 
-  console.log(y); // [1, 2] 
+  //部分文字列 = 例)'hello'の 'ell'のみ取り出したい
+  // str.substring(開始位置, 終了位置);
+  // console.log(str.substring(1, 4));
 
+//部分文字列 = 例)'hello'の 'e'のみ取り出したい
+  console.log(str[1]);
 }
