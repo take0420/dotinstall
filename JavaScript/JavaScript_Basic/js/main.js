@@ -13,6 +13,7 @@
 
      like() {
       this.likeCount++;
+      this.show();
      } 
   }
 
@@ -23,6 +24,6 @@
   
   posts[0].like();
 
-  posts[0].show();
-  posts[1].show();
+  // posts[0].show();
+  // posts[1].show();
 }
