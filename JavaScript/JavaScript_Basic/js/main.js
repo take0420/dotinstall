@@ -1,17 +1,14 @@
 'use strict';
 {
-  let i = 0
+//ユーザーから名前を受取り。それを大文字にする処理
+  // const name = 'taguchi';
+//本当は数値を入力するとエラーになるが、それでも実行したい場合 => 例外処理( try {} )をする。
   
-  function showTime() {
-    console.log(new Date());
-    const timeoutId = setTimeout(showTime, 1000);
-    i++;
-    if (i > 2) {
-      clearTimeout(timeoutId);
-    }
+  try {
+    console.log(name.toUpperCase());
+  } catch (e) {
+    console.log(e);
   }
-// 1 秒後に 1回だけ実行
-  // setTimeout(showTime, 1000);
-
-  showTime();
+//処理完了のメッセージ
+  console.log('Finish!');
 }
