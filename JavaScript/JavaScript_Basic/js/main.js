@@ -1,38 +1,13 @@
 'use strict';
 
-{
-  class Post { // 親クラス
-    constructor(text) { 
-      this.text = text;
-      this.likeCount = 0;
-    }
-
-    show() {
-     console.log(`${this.text} - ${this.likeCount} likes`);
-    }
-
-     like() {
-      this.likeCount++;
-      this.show();
-     } 
-    }
-     class SponsoredPost extends Post { // 子クラス
-      constructor(text, sponsor) {
-        super(text);
-        this.sponsor = sponsor;
-      }
-      
-      show() {
-        super.show();
-        console.log(`... sponsored by ${this.sponsor}`);
-        }
-       }
-  const posts = [
-    new Post('JavaScriptの勉強中...'),
-    new Post('プログラミング楽しい！'),
-    new SponsoredPost('3分動画でマスターしよう', 'dotinstall'),
-  ];
-  
-  posts[2].show();
-  posts[2].like();
+{ 
+  // DOM は document という特殊なオブジェクトで扱うことができる。
+  // また、文書内から特定の要素を取得するには、 querySelector() というメソッドが有効。
+  function update() {
+    // document.querySelector('h1').textContent = 'Changed!';
+    // document.querySelector('#target').textContent = 'Changed!';
+    document.getElementById('target').textContent = 'Changed!';
+  }
+  // リロードした 1 秒後に変化。
+  setTimeout(update, 1000)
 }
