@@ -1,8 +1,8 @@
 'use strict';
 
 {
-  class Post {
-    constructor(text,sponsor) {
+  class Post {  //親クラス
+    constructor(text,sponsor) { 
       this.text = text;
       this.likeCount = 0;
     }
@@ -16,15 +16,14 @@
       this.show();
      } 
     }
-     class SponsoredPost {
+     class SponsoredPost extends Post {  //子クラス
       constructor(text, sponsor) {
-        this.text = text;
-        this.likeCount = 0;
         this.sponsor = sponsor;
       }
       
       show() {
         console.log(`${this.text} - ${this.likeCount} likes`);
+        console.log(`... sponsored by ${this.sponsor}`);
        }
    
         like() {
