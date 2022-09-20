@@ -1,8 +1,8 @@
 'use strict';
 
 {
-  class Post {  //親クラス
-    constructor(text,sponsor) { 
+  class Post { // 親クラス
+    constructor(text) { 
       this.text = text;
       this.likeCount = 0;
     }
@@ -16,27 +16,23 @@
       this.show();
      } 
     }
-     class SponsoredPost extends Post {  //子クラス
+     class SponsoredPost extends Post { // 子クラス
       constructor(text, sponsor) {
+        super(text);
         this.sponsor = sponsor;
       }
       
       show() {
-        console.log(`${this.text} - ${this.likeCount} likes`);
+        super.show();
         console.log(`... sponsored by ${this.sponsor}`);
-       }
-   
-        like() {
-         this.likeCount++;
-         this.show();
-        } 
+        }
        }
   const posts = [
     new Post('JavaScriptの勉強中...'),
     new Post('プログラミング楽しい！'),
     new SponsoredPost('3分動画でマスターしよう', 'dotinstall'),
   ];
-    
+  
   posts[2].show();
   posts[2].like();
 }
