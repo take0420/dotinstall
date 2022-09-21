@@ -2,10 +2,14 @@
 
 {
   document.querySelector('button').addEventListener('click', () => {
-    const item1 = document.querySelectorAll('li')[1];
+    const li = document.createElement('li');
 
-    // item1.remove(); 
-    // 親Node.removeChild(削除するNode)
-    document.querySelector('ul').removeChild(item1);
+    const text = document.querySelector('input');
+    li.textContent = text.value;
+    document.querySelector('ul').appendChild(li);
+
+    text.value = '';
+    text.focus();
   });
 }
+
