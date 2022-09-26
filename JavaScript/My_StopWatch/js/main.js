@@ -7,6 +7,8 @@
   const reset = document.getElementById('reset');
 
   let startTime;
+  let timeoutId;
+
   // カウントアップ
   function countUp() {
     // 経過時間で Date オブジェクトを作成。そのメソッドを使用する。
@@ -18,7 +20,7 @@
     timer.textContent = `${m}:${s}.${ms}`;
 
     // countUp()の処理を一定時間 (10ミリ秒後に)ごとに繰り返したい。
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       countUp();
     }, 10);
   }
@@ -26,5 +28,13 @@
   start.addEventListener('click', () => {
     startTime = Date.now();
     countUp();
+  });
+
+  stop.addEventListener('click', () => {
+    clearTimeout(timeoutId);
+  });
+
+  reset.addEventListener('click', () => {
+    timer.textContent = '00:00.000';
   });
 }
