@@ -28,40 +28,49 @@
 
   // スタートの状態で有効(disabled = false )なボタン
   function setButtonStateInitial() {
-    start.disabled = false; // 有効
-    stop.disabled = true; // 無効
-    reset.disabled = true; // 無効
+    start.classList.remove('inactive'); // 有効
+    stop.classList.add('inactive'); // 無効
+    reset.classList.add('inactive'); // 無効
 
   }
-  // カウントアップの状態で有効(disabled = false )なボタン
+  // カウントアップの状態で有効(classList.remove('inactive') )なボタン
   function setButtonStateRunning() {
-    start.disabled = true; // 無効
-    stop.disabled = false; // 有効
-    reset.disabled = true; // 無効
+    start.classList.add('inactive'); // 無効
+    stop.classList.remove('inactive'); // 有効
+    reset.classList.add('inactive'); // 無効
 
   }
-  // ストップの状態で有効(disabled = false )なボタン
+  // ストップの状態で有効(classList.remove('inactive') )なボタン
   function setButtonStateStopped()  {
-    start.disabled = false; // 有効
-    stop.disabled = true; // 無効
-    reset.disabled = false; // 有効
+    start.classList.remove('inactive'); // 有効
+    stop.classList.add('inactive'); // 無効
+    reset.classList.remove('inactive'); // 有効
   }
 
   setButtonStateInitial();
 
   start.addEventListener('click', () => {
+    if (start.classList.contains('inactive') === true) {
+      return;
+    }
     setButtonStateRunning();
     startTime = Date.now();
     countUp();
   });
 
   stop.addEventListener('click', () => {
+    if (stop.classList.contains('inactive') === true) {
+      return;
+    }
     setButtonStateStopped();
     clearTimeout(timeoutId);
     elapsedTime += Date.now() - startTime; 
   });
 
   reset.addEventListener('click', () => {
+    if (reset.classList.contains('inactive') === true) {
+      return;
+    }
     setButtonStateInitial();
     timer.textContent = '00:00.000';
     elapsedTime = 0;
