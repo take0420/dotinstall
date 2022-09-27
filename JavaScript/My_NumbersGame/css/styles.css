@@ -6,18 +6,53 @@ body {
   font-weight: bold;
 }
 
+/* 全体（見えないがパネルの外に枠がある。background で確認。） */
 #container {
   /* 50pxのパネルが2個 と 10pxの余白が2個 */
   width: 120px;
   margin: 16px auto;
-  background: pink;
+  /* background: pink; */
 }
 
+/* パネル */
 #board {
   /* 箇条書きに用いられる「・」を取り除きたい。 */
   list-style: none;
-  margin: 0;
+  margin: 0 0 8px;
   padding: 10px;
   background: #fff;
   border-radius: 4px;
+  /* 横並び、親要素からのはみ出し防止 */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* パネルの中の数値に対して */
+#board li {
+  background: #00aaff;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  /* 立体的に */
+  border-radius: 4px;
+  line-height: 40px;
+  text-align: center;
+  box-shadow: 0 4px 0 #0088cc;
+}
+
+/* pressedスイッチを押すと対象の 0 に対して */
+#board li.pressed {
+  background: #ccc;
+  box-shadow: none;
+  margin-top: 9px;
+  margin-bottom: 1px;
+}
+
+/* タイマー */
+#timer {
+  margin-bottom: 8px;
+  font-size: 20px;
+  text-align: right;
 }
