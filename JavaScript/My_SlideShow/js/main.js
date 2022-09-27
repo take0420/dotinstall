@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 {
   const images = [
@@ -43,7 +43,26 @@
       target = 0;
     }
     document.querySelectorAll('.thumbnails > li')[target].click();
-});
+  });
+
+  const prev = document.getElementById('prev');
+  prev.addEventListener('click', () => {
+    let target = currentIndex - 1;
+    if (target < 0) {
+      target = images.length - 1;
+    }
+    document.querySelectorAll('.thumbnails > li')[target].click();
+  });
+
+  function playSlideshow() {
+    setTimeout(() => {
+      next.click();
+      playSlideshow();
+    }, 1000);
+  }
+
+  const play = document.getElementById('play');
+  play.addEventListener('click', () => {
+    playSlideshow();
+  });
 }
-
-
