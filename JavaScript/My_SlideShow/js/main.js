@@ -54,15 +54,29 @@
     document.querySelectorAll('.thumbnails > li')[target].click();
   });
 
+  //
+  let timeoutId; 
+
   function playSlideshow() {
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       next.click();
       playSlideshow();
     }, 1000);
   }
 
+  let isPlaying = false;
+
   const play = document.getElementById('play');
   play.addEventListener('click', () => {
-    playSlideshow();
+    if (isPlaying === false) {
+      playSlideshow();
+      play.textContent = 'Pause';
+    } else {
+      clearTimeout(timeoutId);
+      play.textContent = 'Play';
+
+    }
+    // Play で動作している時は Pause 、Pause の時は Playに。=> 逆の処理。
+    isPlaying = !isPlaying;
   });
 }
