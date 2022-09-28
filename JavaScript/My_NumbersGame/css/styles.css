@@ -56,3 +56,20 @@ body {
   font-size: 20px;
   text-align: right;
 }
+
+/* STARTボタン */
+#btn {
+  cursor: pointer;
+  user-select: none;
+  background: #f44336;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 0 #d1483e;
+}
+
+/* ボタンを押した時に沈み込む動作 */
+#btn:active {
+  margin-top: 12px;
+  box-shadow: none;
+}
