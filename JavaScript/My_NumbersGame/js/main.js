@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 {
   class Panel {
@@ -9,6 +9,11 @@
 
     getEl() {
       return this.el;
+    }
+
+    activate(num) {
+      this.el.classList.remove('pressed');
+      this.el.textContent = num;
     }
   }
 
@@ -24,10 +29,24 @@
     setup() {
       const board = document.getElementById('board');
       this.panels.forEach(panel => {
-        board.appendChild(panel.getEl()); 
+        board.appendChild(panel.getEl());
+      });
+    }
+
+    activate() {
+      const nums = [0, 1, 2, 3];
+
+      this.panels.forEach(panel => {
+        const num = nums.splice(Math.floor(Math.random() * nums.length), 1)[0];
+        panel.activate(num);
       });
     }
   }
 
   const board = new Board();
+
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', () => {
+    board.activate();
+  });
 }
