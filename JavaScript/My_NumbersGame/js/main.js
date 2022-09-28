@@ -2,7 +2,8 @@
 
 {
   class Panel {
-    constructor() {
+    constructor(game) {
+      this.game = game;
       this.el = document.createElement('li');
       this.el.classList.add('pressed');
       this.el.addEventListener('click', () => {
@@ -20,19 +21,20 @@
     }
 
     check() {
-      if (currentNum === parseInt(this.el.textContent, 10)) {
+      if (this.game.getCurrentNum() === parseInt(this.el.textContent, 10)) {
         this.el.classList.add('pressed');
-        currentNum++;
+        this.game.addCurrentNum();
 
-        if (currentNum === 4) {
-          clearTimeout(timeoutId);
+        if (this.game.getCurrentNum() === 4) {
+          clearTimeout(this.game.getTimeoutId());
         }
       }
     }
   }
 
   class Board {
-    constructor() {
+    constructor(game) {
+      this.game = game
       this.panels = [];
       for (let i = 0; i < 4; i++) {
         this.panels.push(new Panel());
@@ -59,7 +61,7 @@
 
   class Game {
     constructor() {
-      this.board = new Board();
+      this.board = new Board(this);
 
       this.currentNum = undefined;
       this.startTime = undefined;
@@ -91,7 +93,28 @@
         this.runTimer();
       }, 10);
     }
+
+    addCurrentNum() {
+      this.currentNum++;
+    }
+
+    getCurrentNum() {
+      return this.currentNum;
+    }
+
+    getTimeoutId() {
+      return this.timeoutId;
+    }
+
+
   }
 
   new Game();
 }
+
+
+
+
+
+
+
